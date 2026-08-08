@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Rigidbody rb;
 
+
+    private Vector3 lastPos = new Vector3(0,0,0);
+
     private InputAction moveAction;
     private Vector2 moveValue;
 
