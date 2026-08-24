@@ -4,6 +4,8 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField]
     private TMP_Text notiText;
+    [SerializeField]
+    private TMP_Text victoryText;
 
     public static UIManager instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,5 +28,14 @@ public class UIManager : MonoBehaviour
     public void ShowNotiText(string s)
     {
         notiText.text = s;
+    }
+
+    public void ShowVictory(bool show)
+    {
+        if (show == false)
+        {
+
+            return;
+        }
     }
 }

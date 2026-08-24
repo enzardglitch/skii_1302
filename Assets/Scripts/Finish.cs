@@ -21,6 +21,6 @@ public class Finish : MonoBehaviour
         {
             return;
         }
-        UIManager.instance.ShowNotiText($"You Win!\n with {player.Point} points!");
+        //GameManager.instance.FinishGame();
     }
 }
