@@ -34,8 +34,11 @@ public class UIManager : MonoBehaviour
     {
         if (show == false)
         {
-
+            victoryText.enabled = false;
             return;
         }
+
+        victoryText.enabled = true;
+
     }
 }

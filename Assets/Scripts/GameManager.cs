@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
 
     public void FinishGame()
     {
-        UIManager.instance.ShowNotiText($"You Win!\n with x points!");
+        UIManager.instance.ShowNotiText($"You Win!\n with {0} points!"); //player.points!!!!!!!!
     }
 
 }
