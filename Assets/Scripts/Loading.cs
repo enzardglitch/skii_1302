@@ -18,13 +18,16 @@ public class Loading : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print("hi");
         if (waitSecond > 0f)
         {
             waitSecond -= Time.deltaTime;
+            print(waitSecond);
         }
         else
         {
             StartCoroutine(LoadNewScene());
+            print("too");
         }
     }
 
@@ -32,6 +35,7 @@ public class Loading : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync("scene01");
 
+        print(operation.progress);
         while (!operation.isDone)
         {
             slider.value = operation.progress / 0.9f;

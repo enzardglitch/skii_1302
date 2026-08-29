@@ -15,9 +15,7 @@ public class Player : MonoBehaviour
     private InputAction moveAction;
     private Vector2 moveValue;
 
-    [SerializeField]
-    private int point;
-    public int Point { get { return point; } set { point = value; } }
+    private float moveLast;
 
     [SerializeField]
     private int hp;
@@ -41,5 +39,9 @@ public class Player : MonoBehaviour
     {
         moveValue = moveAction.ReadValue<Vector2>();
         rb.AddForce(moveValue.x * Vector2.right * forcePower);
+        Transform penguin = transform.Find("Penguin");
+        float moveDelta = rb.linearVelocity.x - moveLast;
+        moveLast = rb.linearVelocity.x;
+        //penguin.rotation = Quaternion.Euler(45, moveDelta, 0);
     }
 }

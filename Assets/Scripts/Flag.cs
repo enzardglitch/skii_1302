@@ -3,6 +3,8 @@ using UnityEngine;
 public class Flag : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField]
+    private int point;
     void Start()
     {
         
@@ -22,10 +24,8 @@ public class Flag : MonoBehaviour
         {
             return;
         }
-
-        player.Point += 10;
-
-        UIManager.instance.ShowNotiText($"+10 points\nPoints: {player.Point}");
-        Destroy(gameObject);
+        GameManager.instance.TakeCoin(player, point);
+        AudioManager.instance.PlaySFX(0);
+        gameObject.SetActive(false);
     }
 }

@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Tree : MonoBehaviour
 {
-
+    [SerializeField]
+    private int damage;
     private MeshRenderer rd;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,14 +28,8 @@ public class Tree : MonoBehaviour
         {
             return;
         }
-        
-        player.HP -= 15;
-        UIManager.instance.ShowNotiText($"Hurt -15\nHP: {player.HP}");
-
-        if (player.HP <= 0)
-        {
-            UIManager.instance.ShowNotiText($"Hurt -15\nHP: im fucking DEAD\n with {player.Point} points!");
-        }
+        AudioManager.instance.PlaySFX(1);
+        GameManager.instance.TakeDamage(player, damage);
     }
 
     private void OnCollisionExit(Collision collision)

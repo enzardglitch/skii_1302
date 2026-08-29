@@ -21,6 +21,8 @@ public class Finish : MonoBehaviour
         {
             return;
         }
-        //GameManager.instance.FinishGame();
+
+        AudioManager.instance.PlaySFX(2);
+        GameManager.instance.FinishGame();
     }
 }
